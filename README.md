@@ -16,14 +16,14 @@
 ### Association
 
 - has_many :items
-- has_many :buyer
+- has_many :buyers
 - has_many :comments
 
 ## items テーブル
 
 | Column            | Type       | Options     |
 | ----------------- | ------     | ----------- |
-| user_id           | references | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
 | name              | string     | null: false |
 | show              | text       | null: false |
 | category_id       | integer    | null: false |
@@ -36,8 +36,8 @@
 ### Association
 
 - belongs_to :user
-- has_many :commnets
-- has_many :buyers
+- has_many   :commnets
+- has_one    :buyer
 
 ## buyer テーブル
 
@@ -65,13 +65,13 @@
 - belongs_to :user
 
 
-## arrivingaddress テーブル
+## buyeraddress テーブル
 
-| Column            | Type       | Options                        |
-| -------           | ---------- | ------------------------------ |
-| arrivingaddress   | integer    | null: false                    |
-| user_id           | references | null: false, foreign_key: true |
-| item_id           | references | null: false, foreign_key: true |
+| Column         | Type       | Options                        |
+| -------        | ---------- | ------------------------------ |
+| address        | integer    | null: false                    |
+| user           | references | null: false, foreign_key: true |
+| item           | references | null: false, foreign_key: true |
 
 ### Association
 
