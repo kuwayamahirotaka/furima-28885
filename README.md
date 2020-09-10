@@ -23,6 +23,7 @@
 
 | Column            | Type   | Options     |
 | ----------------- | ------ | ----------- |
+| seller_name       | string | null: false |
 | item_name         | string | null: false |
 | item_show         | text   | null: false |
 | category          | integer| null: false |
