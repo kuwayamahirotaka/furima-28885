@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_one  :buyer
+- has_many :buyer
 - has_many :comments
 
 ## items テーブル
@@ -30,7 +30,8 @@
 | status_id         | integer    | null: false |
 | trasnfee_id       | integer    | null: false |
 | transregion_id    | integer    | null: false |
-| price             | string     | null: false |
+| transdate         | integer    | null: false |
+| price             | integer    | null: false |
 
 ### Association
 
@@ -44,8 +45,6 @@
 | ------            | ---------- | ------------------------------ |
 | item              | references | null: false, foreign_key:true  |
 | user              | references | null: false, foreign_key: true |
-| arrivingdate      | integer    | null: false |
-| arrivingaddress   | integer    | null: false |
 
 ### Association
 
@@ -59,6 +58,20 @@
 | content | string     |                                |
 | user_id | references | null: false, foreign_key: true |
 | item_id | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :item
+- belongs_to :user
+
+
+## arrivingaddress テーブル
+
+| Column            | Type       | Options                        |
+| -------           | ---------- | ------------------------------ |
+| arrivingaddress   | integer    | null: false                    |
+| user_id           | references | null: false, foreign_key: true |
+| item_id           | references | null: false, foreign_key: true |
 
 ### Association
 
