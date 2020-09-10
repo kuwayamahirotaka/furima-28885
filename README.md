@@ -16,21 +16,21 @@
 ### Association
 
 - has_many :items
-- has_many :buyer, through: items
+- has_many :buyer
 - has_many :comments
 
 ## items テーブル
 
 | Column            | Type   | Options     |
 | ----------------- | ------ | ----------- |
-| item_image        | string | null: false |
 | item_name         | string | null: false |
-| item_show         | string | null: false |
-| category          | string | null: false |
-| item_status       | string | null: false |
-| trasnfee          | string | null: false |
-| transregion       | string | null: false |
-| arrivingdate      | date   | null: false |
+| item_show         | text   | null: false |
+| category          | integer| null: false |
+| item_status       | integer| null: false |
+| trasnfee          | integer| null: false |
+| transregion       | integer| null: false |
+| arrivingdate      | integer| null: false |
+| arrivingaddress   | integer| null: false |
 | price             | string | null: false |
 
 ### Association
@@ -42,10 +42,8 @@
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| item_id| references | null: false, foreign_key:true  |
-| user_id| references | null: false, foreign_key: true |
-| credit | string     | null: false                    |
-| area   | string     | null: false                    |
+| item   | references | null: false, foreign_key:true  |
+| user   | references | null: false, foreign_key: true |
 
 ### Association
 
