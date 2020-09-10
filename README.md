@@ -23,6 +23,7 @@
 
 | Column            | Type   | Options     |
 | ----------------- | ------ | ----------- |
+<<<<<<< Updated upstream
 | seller_name       | string | null: false |
 | item_name         | string | null: false |
 | item_show         | text   | null: false |
@@ -32,6 +33,16 @@
 | transregion       | integer| null: false |
 | arrivingdate      | integer| null: false |
 | arrivingaddress   | integer| null: false |
+=======
+| item_name         | string | null: false |
+| item_show         | text   | null: false |
+| category_id       | integer| null: false |
+| item_status_id    | integer| null: false |
+| trasnfee_id       | integer| null: false |
+| transregion_id    | integer| null: false |
+| arrivingdate_id   | integer| null: false |
+| arrivingaddress_id| integer| null: false |
+>>>>>>> Stashed changes
 | price             | string | null: false |
 
 ### Association
@@ -41,10 +52,18 @@
 
 ## buyer テーブル
 
+<<<<<<< Updated upstream
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | item   | references | null: false, foreign_key:true  |
 | user   | references | null: false, foreign_key: true |
+=======
+| Column 　　　　　　　| Type       | Options                        |
+| -----------------　| ---------- | ------------------------------ |
+| item   　　　　　　　| references | null: false, foreign_key:true  |
+| user  　　　　　 　　| references | null: false, foreign_key: true |
+| arrivingaddress_id | references | null: false, foreign_key: true |
+>>>>>>> Stashed changes
 
 ### Association
 
