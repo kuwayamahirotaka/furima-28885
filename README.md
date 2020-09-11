@@ -71,9 +71,9 @@
 | Column         | Type       | Options                        |
 | -------        | ---------- | ------------------------------ |
 | postalcode     | string     | null: false                    |
-| building       | integer    |                                |
-| address        | integer    | null: false                    |
-| municipalities | integer    | null: false                    |
+| building       | string     |                                |
+| address        | string     | null: false                    |
+| municipalities | string     | null: false                    |
 | prefecture_id  | integer    | null: false                    |
 | phonenumber    | string     | null: false                    |
 
