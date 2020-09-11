@@ -70,11 +70,12 @@
 
 | Column         | Type       | Options                        |
 | -------        | ---------- | ------------------------------ |
-| building       | integer    | null: false                    |
+| postalcode     | integer    | null: false                    |
+| building       | integer    |                                |
 | address        | integer    | null: false                    |
 | municipalities | integer    | null: false                    |
 | prefecture_id  | integer    | null: false                    |
-
+| phonenumber    | integer    | null: false                    |
 
 ### Association
 
