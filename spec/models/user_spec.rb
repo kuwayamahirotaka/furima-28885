@@ -24,7 +24,7 @@ describe User do
         expect(@user.errors.full_messages).to include("Email can't be blank")
       end
       it 'emailに＠が含まれていない' do
-        @user.email.include("@")
+        @user.email = "test.com"
         @user.valid?
         expect(@user.errors.full_messages).to include("@ can't be included")
       end

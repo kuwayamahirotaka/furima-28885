@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  NAME_REGEX = "/\A[ぁ-んァ-ン一-龥]/"
-  NAME_REGEX_KANA = "/\A[ァ-ヶー－]+\z/"
+  NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/
+  NAME_REGEX_KANA = /\A[ァ-ヶー－]+\z/
   
   with_options presence: true do
     validates :nickname
