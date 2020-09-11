@@ -70,14 +70,13 @@
 
 | Column         | Type       | Options                        |
 | -------        | ---------- | ------------------------------ |
+| building       | integer    | null: false                    |
 | address        | integer    | null: false                    |
+| municipalities | integer    | null: false                    |
 | prefecture_id  | integer    | null: false                    |
-| user           | references | null: false, foreign_key: true |
-| item           | references | null: false, foreign_key: true |
+
 
 ### Association
 
-- belongs_to :item
-- belongs_to :user
-- belongs_to :buyeraddress
+- belongs_to :buyer
 - belongs_to_active_hash :prefecture
