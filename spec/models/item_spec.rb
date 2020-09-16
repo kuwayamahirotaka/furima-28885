@@ -30,27 +30,27 @@ describe Item do
         expect(@item.errors.full_messages).to include("Show input")
       end
       it 'category_idが--だと登録できない' do
-        @item.category_id = '--'
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category select")
       end
       it 'status_idが--だと登録できない' do
-        @item.status_id = '--'
+        @item.status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Status select")
       end
       it 'transfee_idが--だと登録できない' do
-        @item.transfee_id = '--'
+        @item.transfee_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Transfee select")
       end
       it 'transregion_idが--だと登録できない' do
-        @item.transregion_id = '--'
+        @item.transregion_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Transregion select")
       end
       it 'transdate_idが--だと登録できない' do
-        @item.transdate_id = '--'
+        @item.transdate_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Transdate select")
       end
@@ -60,7 +60,12 @@ describe Item do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it 'priceが¥300以上¥9,999,999以下でなければ登録できない' do
-        @item.price = '299'
+        @item.price = 299
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Please input ¥300~¥9,999,999')
+      end
+      it 'priceが¥300以上¥9,999,999以下でなければ登録できない' do
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include('Please input ¥300~¥9,999,999')
       end
