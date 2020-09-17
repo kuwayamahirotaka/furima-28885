@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    item_set
+    @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
     else
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if item.destroy
+    if @item.destroy
     redirect_to root_path
     else
       render :edit
