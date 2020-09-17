@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
+    item_set2
     if item.update(item_params)
       redirect_to root_path
     else
@@ -28,9 +28,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    item_set2
+    if item.destroy
     redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -41,6 +44,10 @@ class ItemsController < ApplicationController
 
   def item_set
     @item = Item.find(params[:id])
+  end
+
+  def item_set2
+    item = Item.find(params[:id])
   end
 
 end
