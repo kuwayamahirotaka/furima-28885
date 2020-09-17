@@ -10,7 +10,7 @@ window.addEventListener('load', function(){
     const profit = document.getElementById("profit");
 
     addTaxPrice.innerHTML = Math.floor(price*0.1);
-    profit.innerHTML = Math.floor(price - price*0.1);
+    profit.innerHTML = Math.floor(price - Math.floor(price*0.1));
     }
   )
 })
