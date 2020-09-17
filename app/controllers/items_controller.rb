@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :item_set, only: [:edit, :show]
+  before_action :item_set, only: [:edit, :show, :update, :destroy]
 
   def index
     @items = Item.order("created_at DESC")
@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    item_set
     if @item.save
       redirect_to root_path
     else
@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item_set2
     if item.update(item_params)
       redirect_to root_path
     else
@@ -28,7 +27,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item_set2
     if item.destroy
     redirect_to root_path
     else
@@ -44,10 +42,6 @@ class ItemsController < ApplicationController
 
   def item_set
     @item = Item.find(params[:id])
-  end
-
-  def item_set2
-    item = Item.find(params[:id])
   end
 
 end
