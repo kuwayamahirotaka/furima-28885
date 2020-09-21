@@ -70,12 +70,13 @@
 
 | Column         | Type       | Options                        |
 | -------        | ---------- | ------------------------------ |
-| postalcode     | string     | null: false                    |
-| building       | string     |                                |
-| address        | string     | null: false                    |
-| municipalities | string     | null: false                    |
-| prefecture_id  | integer    | null: false                    |
+| postal_code    | string     | null: false                    |
+| building_name  | string     |                                |
+| house_number   | string     | null: false                    |
+| city           | string     | null: false                    |
+| prefecture     | integer    | null: false                    |
 | phonenumber    | string     | null: false                    |
+| user_id        | references | null: false, foreign_key: true |
 
 ### Association
 
