@@ -1,13 +1,12 @@
 class BuyersController < ApplicationController
-  #before_action: set_item only: [:index]
+  before_action :authenticate_user!
+  before_action :set_item only: [:index,:create]
+  
   def index
-    @item = Item.find(params[:item_id])
     @buyer = BuyerBuyeraddress.new
   end
 
-
   def create
-    @item = Item.find(params[:item_id])
     @buyer = BuyerBuyeraddress.new(buyer_params)
     if @buyer.valid?
       @buyer.save
@@ -31,7 +30,8 @@ class BuyersController < ApplicationController
       currency:'jpy'                 # 通貨の種類(日本円)
     )
   end
-  #def set_item
-  #  @item = Item.find(params[:item_id])
-  #end
+  
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
 end
