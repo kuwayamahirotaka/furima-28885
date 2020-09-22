@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :item_set, only: [:edit, :show, :update, :destroy]
-  before_action :move_to_index, except: [:index, :show]
+  
 
   def index
     @items = Item.order("created_at DESC")
@@ -45,10 +45,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def move_to_index
-    unless user_id.item && item.buyer.nill
-      redirect_to action: :index
-    end
-  end
+ 
 
 end

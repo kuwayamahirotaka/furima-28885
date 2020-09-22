@@ -1,6 +1,7 @@
 class BuyersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item only: [:index,:create]
+  before_action :set_item, only: [:index,:create]
+  before_action :move_to_index
   
   def index
     @buyer = BuyerBuyeraddress.new
@@ -33,5 +34,11 @@ class BuyersController < ApplicationController
   
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def move_to_index
+    if @item.buyer != nill
+      redirect_to :root_path
+    end
   end
 end
