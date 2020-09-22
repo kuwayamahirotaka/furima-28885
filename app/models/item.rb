@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   
   validates :image, presence: true
   validates :name, presence: true, length: {maximum: 40}
-  validates :show, presence: true, length: {maximum: 1000}
+  validates :detail, presence: true, length: {maximum: 1000}
   validates :category_id, numericality: { other_than: 1, message: 'Please select one'}
   validates :status_id, numericality: { other_than: 1, message: 'Please select one' }
   validates :transfee_id, numericality: { other_than: 1, message: 'Please select one' }
