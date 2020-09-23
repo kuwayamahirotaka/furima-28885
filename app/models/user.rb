@@ -21,5 +21,5 @@ class User < ApplicationRecord
   end
 
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: 'is invalid. Input email.' }, uniqueness: { case_sensitive: false }
-  validates :password, format: { with: /\A[a-z\d]{8,}+\z/i, message: 'is invalid. Input password.' }
+  validates :password, format: { with: /\A[a-z\d]{6,}+\z/i, message: 'is invalid. Input password.' }
 end
